@@ -42,13 +42,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             //padding goes here
             RoundedButton(
                 title: 'Login',
-                colour: Color(0xffFFDE5959),
+                colour: Color(0xff6E3AA7),
                 onPressed: () {
                   Navigator.pushNamed(context, LoginScreen.id);
                 }),
             RoundedButton(
                 title: 'Register',
-                colour: Color(0xffFFDE5959),
+                colour: Color(0x506E3AA7),
                 onPressed: () {
                   Navigator.pushNamed(context, RegistrationScreen.id);
                 }),
