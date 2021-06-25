@@ -1,4 +1,4 @@
-import 'package:flash_chat/constants.dart';
+import 'package:gossip_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'rounded_button.dart';
 import 'constants.dart';
