@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gossip_app/body.dart';
 import 'welcome_screen.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
@@ -17,6 +18,7 @@ class Gossip extends StatelessWidget {
         RegistrationScreen.id: (context) => RegistrationScreen(),
         ChatScreen.id: (context) => ChatScreen(),
       },
+      home: WelcomeScreen(),
     );
   }
 }

@@ -1,6 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gossip_app/registration_screen.dart';
 import 'rounded_button.dart';
 import 'constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'rounded_button.dart';
+import 'already_have_an_account.dart';
+import 'rounded_input_field.dart';
+import 'rounded_password_field.dart';
+import 'already_have_an_account.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -12,64 +20,58 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Container(
-              height: 200.0,
-              child: Expanded(
-                child: Container(
-                  alignment: Alignment.bottomCenter,
-                  child: Text(
-                    'Gossip',
-                    style: TextStyle(
-                      fontSize: 60.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff3D2945),
-                    ),
-                  ),
+        padding: const EdgeInsets.all(25.0),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 35,
+              ),
+              Container(
+                alignment: Alignment.center,
+                child: Text(
+                  "LOGIN",
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 48.0,
-            ),
-            TextField(
-              keyboardType: TextInputType.emailAddress,
-              textAlign: TextAlign.center,
-              onChanged: (value) {
-                //Do something with the user input.
-              },
-              decoration: kTextFieldDecoration.copyWith(
-                hintText: 'Enter your email',
+              SizedBox(
+                height: 35.0,
               ),
-            ),
-            SizedBox(
-              height: 8.0,
-            ),
-            TextField(
-              obscureText: true,
-              textAlign: TextAlign.center,
-              onChanged: (value) {
-                //Do something with the user input.
-              },
-              decoration: kTextFieldDecoration.copyWith(
-                hintText: 'Enter your password',
+              SvgPicture.asset(
+                'assets/icons/login.svg',
+                width: 240,
+                height: 240,
               ),
-            ),
-            SizedBox(
-              height: 24.0,
-            ),
-            RoundedButton(
-              title: 'Login',
-              colour: Color(0xffFFDE5959),
-              onPressed: () {},
-            ),
-          ],
+              SizedBox(
+                height: 35.0,
+              ),
+              RoundedInputField(
+                hintText: 'Your Email',
+                onChanged: (value) {},
+              ),
+              RoundedPasswordField(
+                onChanged: (value) {},
+              ),
+              RoundedButton(
+                title: 'LOGIN',
+                colour: kPrimaryColor,
+                onPressed: () {},
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              AlreadyHaveAnAccountCheck(
+                press: () {
+                  Navigator.pushNamed(context, RegistrationScreen.id);
+                },
+              ),
+              SizedBox(
+                height: 30,
+              ),
+            ],
+          ),
         ),
       ),
     );
