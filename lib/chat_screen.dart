@@ -31,13 +31,13 @@ class _ChatScreenState extends State<ChatScreen> {
         leading: null,
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.close),
+              icon: Icon(Icons.logout),
               onPressed: () {
                 //Implement logout functionality
               }),
         ],
         title: Text('Chat'),
-        backgroundColor: Color(0xffFFDE5959),
+        backgroundColor: kPrimaryColor,
       ),
       body: SafeArea(
         child: Column(

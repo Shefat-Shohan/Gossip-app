@@ -57,7 +57,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             RoundedButton(
               title: 'REGISTER',
               colour: kPrimaryColor,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, ChatScreen.id);
+              },
             ),
             AlreadyHaveAnAccountCheck(
               login: false,
