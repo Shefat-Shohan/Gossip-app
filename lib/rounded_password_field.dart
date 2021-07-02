@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../constants.dart';
 import 'text_field_container.dart';
+import 'rounded_input_field.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
@@ -12,7 +13,16 @@ class RoundedPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value.isEmpty || value.length <= 7) {
+            return 'Please enter at least 7 character';
+          }
+          return null;
+        },
+        onSaved: (value) {},
+        // TODO confirm  password
+        keyboardType: TextInputType.emailAddress,
         obscureText: true,
         onChanged: onChanged,
         cursorColor: kPrimaryColor,

@@ -2,10 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gossip_app/background.dart';
-import 'package:gossip_app/body.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
-import 'rounded_button.dart';
+import '../rounded_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   final Widget child;
@@ -35,8 +34,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
           SvgPicture.asset(
             'assets/icons/chat.svg',
-            width: 340,
-            height: 340,
+            width: size.height * 0.45,
           ),
           SizedBox(
             height: 25.0,
