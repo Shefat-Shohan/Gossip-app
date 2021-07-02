@@ -51,6 +51,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             email: _emailAddress.toLowerCase().trim(),
             password: _password.trim());
         // TODO collect username to database using flutter map
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(newUser.user.uid)
+            .set({'username': _userName, 'email': _emailAddress});
+
         if (newUser != null) {
           Navigator.pushNamed(context, ChatScreen.id);
           setState(() {
